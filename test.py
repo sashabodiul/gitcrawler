@@ -1,5 +1,6 @@
 import unittest
-from crawler import search_github
+from crawler1 import search_github as example1
+# from crawler2 import search_github as example2
 
 class TestGithubCrawler(unittest.TestCase):
     def test_crawl_github_search(self):
@@ -7,7 +8,7 @@ class TestGithubCrawler(unittest.TestCase):
             "keywords": ["openstack"],
             "type": "Repositories"
         }
-        results = search_github(input_data["keywords"], input_data["type"])
+        results = example1(input_data["keywords"], input_data["type"])
         self.assertGreater(len(results), 0)
         self.assertTrue(all('url' in result for result in results))
 
