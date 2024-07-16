@@ -1,5 +1,5 @@
 import json
-from crawler import search_github
+from crawler1 import search_github
 
 def main():
     input_data = {
