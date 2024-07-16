@@ -6,9 +6,11 @@
 
 ## Требования
 
-- Python 3
+- Python 3.12
 - requests
 - beautifulsoup4
+- aiohttp
+- json
 
 ## Установка
 

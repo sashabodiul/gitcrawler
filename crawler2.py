@@ -21,7 +21,7 @@ PROXIES = [
 
 HEADERS = {
     'Accept': 'application/vnd.github.v3+json',
-    'Authorization': 'Bearer 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'
+    'Authorization': 'Bearer correct_token'
 }
 
 async def fetch_url(session, url):

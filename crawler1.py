@@ -1,6 +1,7 @@
 import requests
 import random
 from typing import List, Dict
+import json
 
 # Прокси и аутентификационные данные
 PROXIES = [
@@ -19,7 +20,7 @@ PROXIES = [
 # Заголовки
 HEADERS = {
     'Accept': 'application/vnd.github.v3+json',
-    'Authorization': f'Bearer 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'
+    'Authorization': f'Bearer correct_token'
 }
 
 def get_random_proxy() -> Dict[str, str]:
@@ -60,3 +61,17 @@ def search_github(keyword: str, search_type: str, max_retries: int = 5) -> List[
         print(f"Failed to retrieve search results for {keyword}: status code {response.status_code}")
 
     return search_results
+
+if __name__ == '__main__':
+
+    input_data = {
+                "keywords": ["openstack", "nova", "css"],
+                "type": "Repositories"
+            }
+
+    all_results = []
+    for keyword in input_data["keywords"]:
+        results = search_github(keyword, input_data["type"])
+        all_results.extend(results)
+
+    print(json.dumps(all_results, indent=2, ensure_ascii=False))
